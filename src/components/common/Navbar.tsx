@@ -111,7 +111,7 @@ export function Navbar() {
 
             {/* Bottom Navbar (Sticky) */}
             <div className="relative">
-              <nav className="sticky top-0 left-0 right-0 z-50 bg-white shadow-md">
+              <nav className="sticky top-0 left-0 right-0 z-50 bg-white ">
                 <div className="flex items-center justify-between mt-2 px-4 lg:px-8">
                   {navItems.map((item) => (
                     <div key={item.title} className="relative group">
