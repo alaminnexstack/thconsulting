@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { useMobile } from "@/hooks/use-mobile";
+// import { useMobile } from "@/hooks/use-mobile";
 import Image from "next/image";
 
 interface NavItem {
@@ -41,7 +41,7 @@ const navItems: NavItem[] = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const isMobile = useMobile();
+  // const isMobile = useMobile();
 
   return (
     <>
