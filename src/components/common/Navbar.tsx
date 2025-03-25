@@ -109,56 +109,58 @@ export function Navbar() {
               </div>
             </div>
 
-            {/* bottom navbar */}
-            <nav className="sticky top-0 left-0 right-0 z-50  bg-white">
-              <div className="flex items-center justify-between mt-2">
-                {navItems.map((item) => (
-                  <div key={item.title} className="relative group">
-                    {item.children ? (
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button
-                            variant="ghost"
-                            className={cn(
-                              "flex items-center rounded-none gap-1 text-lg py-6 text-[#0f2a47] hover:bg-gray-50 hover:border-y-2 hover:border-[#0f2a47]",
-                              pathname === item.href &&
-                                "border-y-2 border-[#0f2a47]"
-                            )}
-                          >
-                            {item.title}
-                            <ChevronDown className="h-4 w-4" />
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="start" className="w-48">
-                          {item.children.map((child) => (
-                            <DropdownMenuItem key={child.title} asChild>
-                              <Link href={child.href}>{child.title}</Link>
-                            </DropdownMenuItem>
-                          ))}
-                        </DropdownMenuContent>
-                      </DropdownMenu>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          "block py-4 px-4 text-[#0f2a47] text-lg hover:bg-gray-50 hover:border-y-2 hover:border-[#0f2a47]",
-                          pathname === item.href &&
-                            "border-y-2 border-[#0f2a47]"
-                        )}
-                      >
-                        {item.title}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-                <Link
-                  href="/contact"
-                  className="rounded-md bg-[#0f2a47] px-6 py-2 text-white hover:bg-[#0a1e35]"
-                >
-                  Kontaktirajte nas
-                </Link>
-              </div>
-            </nav>
+            {/* Bottom Navbar (Sticky) */}
+            <div className="relative">
+              <nav className="sticky top-0 left-0 right-0 z-50 bg-white shadow-md">
+                <div className="flex items-center justify-between mt-2 px-4 lg:px-8">
+                  {navItems.map((item) => (
+                    <div key={item.title} className="relative group">
+                      {item.children ? (
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button
+                              variant="ghost"
+                              className={cn(
+                                "flex items-center rounded-none gap-1 text-lg py-6 text-[#0f2a47] hover:bg-gray-50 hover:border-y-2 hover:border-[#0f2a47]",
+                                pathname === item.href &&
+                                  "border-y-2 border-[#0f2a47]"
+                              )}
+                            >
+                              {item.title}
+                              <ChevronDown className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="start" className="w-48">
+                            {item.children.map((child) => (
+                              <DropdownMenuItem key={child.title} asChild>
+                                <Link href={child.href}>{child.title}</Link>
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className={cn(
+                            "block py-4 px-4 text-[#0f2a47] text-lg hover:bg-gray-50 hover:border-y-2 hover:border-[#0f2a47]",
+                            pathname === item.href &&
+                              "border-y-2 border-[#0f2a47]"
+                          )}
+                        >
+                          {item.title}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                  <Link
+                    href="/contact"
+                    className="rounded-md bg-[#0f2a47] px-6 py-2 text-white hover:bg-[#0a1e35]"
+                  >
+                    Kontaktirajte nas
+                  </Link>
+                </div>
+              </nav>
+            </div>
           </div>
         </div>
       </header>

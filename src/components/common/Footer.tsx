@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="w-full container mx-auto bg-gray-50 text-gray-700 py-8 px-6">
+    <footer className="w-full container mx-auto  text-gray-700 py-8 px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Section */}
         <div>
