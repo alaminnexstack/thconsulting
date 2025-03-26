@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="w-full container mx-auto  text-gray-700 py-8 px-6">
+    <footer className="max-w-[1250px] mx-auto  text-gray-700 py-8 px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Section */}
         <div>
@@ -84,7 +84,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="mt-8 flex justify-between text-sm text-gray-500 pt-4">
+      <div className="mt-8 text-center border-t border-gray-300 text-sm text-gray-500 pt-4">
         <p>
           © 2025 • TH Consulting • Powered by{" "}
           <Link href="#" className="text-[#063556] hover:underline">
