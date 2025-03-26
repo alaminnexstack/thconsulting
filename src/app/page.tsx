@@ -1,4 +1,3 @@
-import ContactForm from "@/components/home/ContactForm";
 import ContactSection from "@/components/home/ContactSection";
 import HeroSection from "@/components/home/HeroSection";
 import HiringProcess from "@/components/home/HiringProcess";

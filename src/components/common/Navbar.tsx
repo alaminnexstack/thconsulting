@@ -6,7 +6,6 @@ import { ChevronDown, Phone } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -27,16 +26,16 @@ const navItems: NavItem[] = [
   { title: "Naslovnica", href: "/" },
   {
     title: "Usluge",
-    href: "/usluge",
+    href: "/services",
     children: [
-      { title: "Usluga 1", href: "/usluge/1" },
-      { title: "Usluga 2", href: "/usluge/2" },
-      { title: "Usluga 3", href: "/usluge/3" },
+      { title: "Usluga 1", href: "/services/1" },
+      { title: "Usluga 2", href: "/services/2" },
+      { title: "Usluga 3", href: "/services/3" },
     ],
   },
-  { title: "Područja rada", href: "/podrucja-rada" },
+  { title: "Područja rada", href: "/industries" },
   { title: "Reference", href: "/reference" },
-  { title: "O nama", href: "/o-nama" },
+  { title: "O nama", href: "/about-us" },
 ];
 
 export function Navbar() {
@@ -46,7 +45,7 @@ export function Navbar() {
   return (
     <>
       {/* Top Navbar */}
-      <header className="w-full container mx-auto bg-white  px-2">
+      <header className="max-w-[1250px] mx-auto bg-white  px-2">
         <div className="flex items-center">
           <div className="flex items-center pr-8">
             <Image src="/images/logo.png" alt="" width={200} height={200} />
@@ -118,17 +117,16 @@ export function Navbar() {
                       {item.children ? (
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button
-                              variant="ghost"
+                            <div
                               className={cn(
-                                "flex items-center rounded-none gap-1 text-lg py-6 text-[#0f2a47] hover:bg-gray-50 hover:border-y-2 hover:border-[#0f2a47]",
+                                "flex items-center rounded-none gap-1 text-lg py-4 text-[#0f2a47] hover:bg-gray-50 hover:border-y-2 hover:border-[#0f2a47]",
                                 pathname === item.href &&
                                   "border-y-2 border-[#0f2a47]"
                               )}
                             >
                               {item.title}
                               <ChevronDown className="h-4 w-4" />
-                            </Button>
+                            </div>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="start" className="w-48">
                             {item.children.map((child) => (
@@ -154,7 +152,7 @@ export function Navbar() {
                   ))}
                   <Link
                     href="/contact"
-                    className="rounded-md bg-[#0f2a47] px-6 py-2 text-white hover:bg-[#0a1e35]"
+                    className="rounded-2xl bg-[#0f2a47] px-6 py-3 text-white hover:bg-red-500"
                   >
                     Kontaktirajte nas
                   </Link>
